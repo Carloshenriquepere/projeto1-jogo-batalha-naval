@@ -13,14 +13,15 @@ public class Main {
         String entrada;
 
         while (contianuaPartida ){
-            System.out.println("Entre com as posições x e y no formato x , y");
+            System.out.println("Entre com as posições x e y no formato x , y ou 'fim' para sair");
             entrada = scanner.nextLine();
             String[] numeros = entrada.split(",");
+            if (entrada.equals("fim"))
+                break;
             int x = Integer.parseInt(numeros[0]);
             int y = Integer.parseInt(numeros[1]);
             System.out.println("x = " + x + ", e y =" + y);
-            if (entrada.equals("fim"))
-                break;
+
             contianuaPartida = mapa.disparo(x,y);
             mapa.desenhaCenario();
         }
